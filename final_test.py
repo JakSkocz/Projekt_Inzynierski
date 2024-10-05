@@ -13,7 +13,7 @@ import tkinter as tk
 from tkinter import filedialog
 
 # Załaduj wytrenowany model
-model = load_model('trained_anthropometric_model.h5', custom_objects={'loss': triplet_loss})
+model = load_model('trained_anthropometric_model_v2.h5', custom_objects={'loss': triplet_loss})
 
 # Stwórz nowy model z pojedynczym wejściem
 input_shape = model.input_shape[0][1:]  # Kształt obrazu

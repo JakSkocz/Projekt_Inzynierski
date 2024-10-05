@@ -32,7 +32,7 @@ def create_base_network(input_shape, feature_shape):
     # Wejście dla obrazów
     input_image = Input(shape=input_shape, name="image_input")
     # Warstwy dla obrazów
-    x = Conv2D(32, (3, 3), activation='relu')(input_image)
+    x = Conv2D(64, (3, 3), activation='relu')(input_image)
     x = MaxPooling2D((2, 2))(x)
     x = Conv2D(64, (3, 3), activation='relu')(x)
     x = MaxPooling2D((2, 2))(x)
@@ -52,7 +52,7 @@ def create_base_network(input_shape, feature_shape):
 
 
 
-def train_model(triplets, triplet_features, epochs=2, batch_size=32):
+def train_model(triplets, triplet_features, epochs=10, batch_size=32):
     input_shape = triplets[0][0].shape 
     feature_shape = triplet_features[0][0].shape[0]  # Liczba cech antropometrycznych
 
